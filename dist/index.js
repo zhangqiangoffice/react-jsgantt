@@ -4689,6 +4689,8 @@ exports.GanttChart = function (pDiv, pFormat) {
                     if (vTmpDiv2) {
                         draw_utils.newNode(vTmpDiv2, 'div', this.vDivId + 'complete_' + vID, this.vTaskList[i].getClass() + 'complete', null, this.vTaskList[i].getCompStr());
                     }
+                    //Delays
+                    draw_utils.newNode(vTmpDiv_1, 'div', this.vDivId + 'delaydiv_' + vID, 'gtaskred', null, 100);
                     // caption
                     if (vComb)
                         vTmpItem = this.vTaskList[i].getParItem();
