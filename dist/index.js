@@ -56,6 +56,7 @@ function createCommonjsModule(fn, module) {
 
 var general_utils = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.calculateStartEndFromDepend = exports.makeRequestOldBrowsers = exports.makeRequest = exports.moveToolTip = exports.updateFlyingObj = exports.isParentElementOrSelf = exports.criticalPath = exports.hashKey = exports.hashString = exports.fadeToolTip = exports.hideToolTip = exports.isIE = exports.getOffset = exports.getScrollbarWidth = exports.getScrollPositions = exports.benchMark = exports.getZoomFactor = exports.delayedHide = exports.stripUnwanted = exports.stripIds = exports.changeFormat = exports.findObj = exports.internalPropertiesLang = exports.internalProperties = void 0;
 exports.internalProperties = ['pID', 'pName', 'pStart', 'pEnd', 'pClass', 'pLink', 'pMile', 'pRes', 'pComp', 'pGroup', 'pParent',
     'pOpen', 'pDepend', 'pCaption', 'pNotes', 'pGantt', 'pCost', 'pPlanStart', 'pPlanEnd'];
 exports.internalPropertiesLang = {
@@ -499,33 +500,34 @@ exports.calculateStartEndFromDepend = function (tasksList) {
 });
 
 unwrapExports(general_utils);
-var general_utils_1 = general_utils.internalProperties;
-var general_utils_2 = general_utils.internalPropertiesLang;
-var general_utils_3 = general_utils.findObj;
-var general_utils_4 = general_utils.changeFormat;
-var general_utils_5 = general_utils.stripIds;
-var general_utils_6 = general_utils.stripUnwanted;
-var general_utils_7 = general_utils.delayedHide;
-var general_utils_8 = general_utils.getZoomFactor;
-var general_utils_9 = general_utils.benchMark;
-var general_utils_10 = general_utils.getScrollPositions;
-var general_utils_11 = general_utils.getScrollbarWidth;
-var general_utils_12 = general_utils.getOffset;
-var general_utils_13 = general_utils.isIE;
-var general_utils_14 = general_utils.hideToolTip;
-var general_utils_15 = general_utils.fadeToolTip;
-var general_utils_16 = general_utils.hashString;
-var general_utils_17 = general_utils.hashKey;
-var general_utils_18 = general_utils.criticalPath;
-var general_utils_19 = general_utils.isParentElementOrSelf;
-var general_utils_20 = general_utils.updateFlyingObj;
-var general_utils_21 = general_utils.moveToolTip;
-var general_utils_22 = general_utils.makeRequest;
-var general_utils_23 = general_utils.makeRequestOldBrowsers;
-var general_utils_24 = general_utils.calculateStartEndFromDepend;
+var general_utils_1 = general_utils.calculateStartEndFromDepend;
+var general_utils_2 = general_utils.makeRequestOldBrowsers;
+var general_utils_3 = general_utils.makeRequest;
+var general_utils_4 = general_utils.moveToolTip;
+var general_utils_5 = general_utils.updateFlyingObj;
+var general_utils_6 = general_utils.isParentElementOrSelf;
+var general_utils_7 = general_utils.criticalPath;
+var general_utils_8 = general_utils.hashKey;
+var general_utils_9 = general_utils.hashString;
+var general_utils_10 = general_utils.fadeToolTip;
+var general_utils_11 = general_utils.hideToolTip;
+var general_utils_12 = general_utils.isIE;
+var general_utils_13 = general_utils.getOffset;
+var general_utils_14 = general_utils.getScrollbarWidth;
+var general_utils_15 = general_utils.getScrollPositions;
+var general_utils_16 = general_utils.benchMark;
+var general_utils_17 = general_utils.getZoomFactor;
+var general_utils_18 = general_utils.delayedHide;
+var general_utils_19 = general_utils.stripUnwanted;
+var general_utils_20 = general_utils.stripIds;
+var general_utils_21 = general_utils.changeFormat;
+var general_utils_22 = general_utils.findObj;
+var general_utils_23 = general_utils.internalPropertiesLang;
+var general_utils_24 = general_utils.internalProperties;
 
 var events = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.addListenerDependencies = exports.addListenerInputCell = exports.addListenerClickCell = exports.addScrollListeners = exports.addFormatListeners = exports.addFolderListeners = exports.updateGridHeaderWidth = exports.addThisRowListeners = exports.addTooltipListeners = exports.syncScroll = exports.removeListener = exports.addListener = exports.showToolTip = exports.mouseOut = exports.mouseOver = exports.show = exports.hide = exports.folder = void 0;
 
 // Function to open/close and hide/show children of specified task
 exports.folder = function (pID, ganttObj) {
@@ -895,27 +897,28 @@ var vColumnsNames = {
 });
 
 unwrapExports(events);
-var events_1 = events.folder;
-var events_2 = events.hide;
-var events_3 = events.show;
-var events_4 = events.mouseOver;
-var events_5 = events.mouseOut;
-var events_6 = events.showToolTip;
-var events_7 = events.addListener;
-var events_8 = events.removeListener;
-var events_9 = events.syncScroll;
-var events_10 = events.addTooltipListeners;
-var events_11 = events.addThisRowListeners;
-var events_12 = events.updateGridHeaderWidth;
-var events_13 = events.addFolderListeners;
-var events_14 = events.addFormatListeners;
-var events_15 = events.addScrollListeners;
-var events_16 = events.addListenerClickCell;
-var events_17 = events.addListenerInputCell;
-var events_18 = events.addListenerDependencies;
+var events_1 = events.addListenerDependencies;
+var events_2 = events.addListenerInputCell;
+var events_3 = events.addListenerClickCell;
+var events_4 = events.addScrollListeners;
+var events_5 = events.addFormatListeners;
+var events_6 = events.addFolderListeners;
+var events_7 = events.updateGridHeaderWidth;
+var events_8 = events.addThisRowListeners;
+var events_9 = events.addTooltipListeners;
+var events_10 = events.syncScroll;
+var events_11 = events.removeListener;
+var events_12 = events.addListener;
+var events_13 = events.showToolTip;
+var events_14 = events.mouseOut;
+var events_15 = events.mouseOver;
+var events_16 = events.show;
+var events_17 = events.hide;
+var events_18 = events.folder;
 
 var draw_utils = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.drawSelector = exports.sLine = exports.CalcTaskXY = exports.getArrayLocationByID = exports.newNode = exports.makeInput = void 0;
 
 exports.makeInput = function (formattedValue, editable, type, value, choices) {
     if (type === void 0) { type = 'text'; }
@@ -1079,15 +1082,16 @@ exports.drawSelector = function (pPos) {
 });
 
 unwrapExports(draw_utils);
-var draw_utils_1 = draw_utils.makeInput;
-var draw_utils_2 = draw_utils.newNode;
-var draw_utils_3 = draw_utils.getArrayLocationByID;
-var draw_utils_4 = draw_utils.CalcTaskXY;
-var draw_utils_5 = draw_utils.sLine;
-var draw_utils_6 = draw_utils.drawSelector;
+var draw_utils_1 = draw_utils.drawSelector;
+var draw_utils_2 = draw_utils.sLine;
+var draw_utils_3 = draw_utils.CalcTaskXY;
+var draw_utils_4 = draw_utils.getArrayLocationByID;
+var draw_utils_5 = draw_utils.newNode;
+var draw_utils_6 = draw_utils.makeInput;
 
 var date_utils = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getIsoWeek = exports.parseDateFormatStr = exports.formatDateStr = exports.parseDateStr = exports.coerceDate = exports.getMaxDate = exports.getMinDate = void 0;
 /**
  * DATES
  */
@@ -1381,13 +1385,13 @@ exports.getIsoWeek = function (pDate) {
 });
 
 unwrapExports(date_utils);
-var date_utils_1 = date_utils.getMinDate;
-var date_utils_2 = date_utils.getMaxDate;
-var date_utils_3 = date_utils.coerceDate;
+var date_utils_1 = date_utils.getIsoWeek;
+var date_utils_2 = date_utils.parseDateFormatStr;
+var date_utils_3 = date_utils.formatDateStr;
 var date_utils_4 = date_utils.parseDateStr;
-var date_utils_5 = date_utils.formatDateStr;
-var date_utils_6 = date_utils.parseDateFormatStr;
-var date_utils_7 = date_utils.getIsoWeek;
+var date_utils_5 = date_utils.coerceDate;
+var date_utils_6 = date_utils.getMaxDate;
+var date_utils_7 = date_utils.getMinDate;
 
 var task = createCommonjsModule(function (module, exports) {
 var __assign = (commonjsGlobal && commonjsGlobal.__assign) || function () {
@@ -1402,6 +1406,7 @@ var __assign = (commonjsGlobal && commonjsGlobal.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.processRows = exports.ClearTasks = exports.RemoveTaskItem = exports.AddTaskItemObject = exports.AddTaskItem = exports.createTaskInfo = exports.TaskItem = exports.TaskItemObject = exports.sortTasks = exports.taskLink = void 0;
 
 
 
@@ -2119,19 +2124,20 @@ exports.processRows = function (pList, pID, pRow, pLevel, pOpen, pUseSort, vDebu
 });
 
 unwrapExports(task);
-var task_1 = task.taskLink;
-var task_2 = task.sortTasks;
-var task_3 = task.TaskItemObject;
-var task_4 = task.TaskItem;
-var task_5 = task.createTaskInfo;
-var task_6 = task.AddTaskItem;
-var task_7 = task.AddTaskItemObject;
-var task_8 = task.RemoveTaskItem;
-var task_9 = task.ClearTasks;
-var task_10 = task.processRows;
+var task_1 = task.processRows;
+var task_2 = task.ClearTasks;
+var task_3 = task.RemoveTaskItem;
+var task_4 = task.AddTaskItemObject;
+var task_5 = task.AddTaskItem;
+var task_6 = task.createTaskInfo;
+var task_7 = task.TaskItem;
+var task_8 = task.TaskItemObject;
+var task_9 = task.sortTasks;
+var task_10 = task.taskLink;
 
 var xml = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getXMLTask = exports.getXMLProject = exports.AddXMLTask = exports.getXMLNodeValue = exports.findXMLNode = exports.parseXMLString = exports.parseXML = void 0;
 
 
 
@@ -2466,16 +2472,17 @@ exports.getXMLTask = function (pID, pIdx) {
 });
 
 unwrapExports(xml);
-var xml_1 = xml.parseXML;
-var xml_2 = xml.parseXMLString;
-var xml_3 = xml.findXMLNode;
+var xml_1 = xml.getXMLTask;
+var xml_2 = xml.getXMLProject;
+var xml_3 = xml.AddXMLTask;
 var xml_4 = xml.getXMLNodeValue;
-var xml_5 = xml.AddXMLTask;
-var xml_6 = xml.getXMLProject;
-var xml_7 = xml.getXMLTask;
+var xml_5 = xml.findXMLNode;
+var xml_6 = xml.parseXMLString;
+var xml_7 = xml.parseXML;
 
 var lang = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ko = exports.hu = exports.cs = exports.ja = exports.tr = exports.id = exports.nl = exports.sv = exports.cn = exports.ru = exports.fr = exports.pt = exports.de = exports.es = exports.en = void 0;
 var es = {
     'january': 'Enero',
     'february': 'Febrero',
@@ -3571,24 +3578,25 @@ exports.ko = ko;
 });
 
 unwrapExports(lang);
-var lang_1 = lang.es;
-var lang_2 = lang.en;
-var lang_3 = lang.de;
-var lang_4 = lang.pt;
-var lang_5 = lang.ru;
-var lang_6 = lang.fr;
-var lang_7 = lang.cn;
+var lang_1 = lang.ko;
+var lang_2 = lang.hu;
+var lang_3 = lang.cs;
+var lang_4 = lang.ja;
+var lang_5 = lang.tr;
+var lang_6 = lang.id;
+var lang_7 = lang.nl;
 var lang_8 = lang.sv;
-var lang_9 = lang.nl;
-var lang_10 = lang.id;
-var lang_11 = lang.tr;
-var lang_12 = lang.ja;
-var lang_13 = lang.cs;
-var lang_14 = lang.hu;
-var lang_15 = lang.ko;
+var lang_9 = lang.cn;
+var lang_10 = lang.ru;
+var lang_11 = lang.fr;
+var lang_12 = lang.pt;
+var lang_13 = lang.de;
+var lang_14 = lang.es;
+var lang_15 = lang.en;
 
 var draw_columns = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.draw_task_headings = exports.draw_list_headings = exports.draw_bottom = exports.draw_header = exports.COLUMN_ORDER = void 0;
 
 
 
@@ -3785,14 +3793,15 @@ exports.draw_task_headings = function (column, vTmpRow, vLangs, vLang, vAddition
 });
 
 unwrapExports(draw_columns);
-var draw_columns_1 = draw_columns.COLUMN_ORDER;
-var draw_columns_2 = draw_columns.draw_header;
+var draw_columns_1 = draw_columns.draw_task_headings;
+var draw_columns_2 = draw_columns.draw_list_headings;
 var draw_columns_3 = draw_columns.draw_bottom;
-var draw_columns_4 = draw_columns.draw_list_headings;
-var draw_columns_5 = draw_columns.draw_task_headings;
+var draw_columns_4 = draw_columns.draw_header;
+var draw_columns_5 = draw_columns.COLUMN_ORDER;
 
 var draw_dependencies = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DrawDependencies = exports.drawDependency = void 0;
 exports.drawDependency = function (x1, y1, x2, y2, pType, pClass) {
     var vDir = 1;
     var vBend = false;
@@ -3888,11 +3897,12 @@ exports.DrawDependencies = function (vDebug) {
 });
 
 unwrapExports(draw_dependencies);
-var draw_dependencies_1 = draw_dependencies.drawDependency;
-var draw_dependencies_2 = draw_dependencies.DrawDependencies;
+var draw_dependencies_1 = draw_dependencies.DrawDependencies;
+var draw_dependencies_2 = draw_dependencies.drawDependency;
 
 var options = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.includeGetSet = void 0;
 
 
 exports.includeGetSet = function () {
@@ -4108,6 +4118,7 @@ var options_1 = options.includeGetSet;
 
 var draw = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GanttChart = void 0;
 
 
 
@@ -4905,10 +4916,11 @@ var draw_1 = draw.GanttChart;
 
 var json = createCommonjsModule(function (module, exports) {
 var __awaiter = (commonjsGlobal && commonjsGlobal.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -4940,6 +4952,7 @@ var __generator = (commonjsGlobal && commonjsGlobal.__generator) || function (th
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.addJSONTask = exports.parseJSONString = exports.parseJSON = void 0;
 
 
 /**
@@ -5097,9 +5110,9 @@ exports.addJSONTask = function (pGanttVar, pJsonObj) {
 });
 
 unwrapExports(json);
-var json_1 = json.parseJSON;
+var json_1 = json.addJSONTask;
 var json_2 = json.parseJSONString;
-var json_3 = json.addJSONTask;
+var json_3 = json.parseJSON;
 
 var jsgantt = createCommonjsModule(function (module, exports) {
 /*
@@ -5132,6 +5145,7 @@ var jsgantt = createCommonjsModule(function (module, exports) {
     Copyright (c) 2009, Shlomy Gantz BlueBrick Inc.
 */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.JSGantt = void 0;
 
 
 
@@ -5199,6 +5213,7 @@ var jsgantt_1 = jsgantt.JSGantt;
 
 var dist = createCommonjsModule(function (module, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.JSGantt = void 0;
 
 module.exports = jsgantt.JSGantt;
 exports.JSGantt = jsgantt.JSGantt;
@@ -5241,7 +5256,7 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "/* add css styles here (optional) */\n {\n  /* Sample CSS for jsGanttImproved v1.8.0 */\n  /* cell defaults */\n  /* all three width values set just to make sure - helps resizing code */\n  /* Additional values for some cell elements */\n  /* Task list defaults */\n  /* Additional values for some task list elements */\n  /* needed for IE8 */\n  /* for some reason firefox needs this */\n  /* Differentiate Group, Milestone and Ordinary task items (applied to row) */\n  /* highlight row (applied to row) */\n  /* task bar caption text styles */\n  /* Task complete %age bar shared attributes */\n  /* Task complete %age bar */\n  /* Milestones */\n  /* Task bar shared attributes */\n  /* Task bars - ggroupblack is set as the default class on the task if it is undefined */\n  /*  END Task bar styles */\n  /* Add a max-height value here if wanted */\n  /* Old Internet Explorer version hacks */\n  /* otherwise the chart disappears! */\n  /* ie6 fixed width */\n  /* variable height design, no need for vertical scroll */\n  /* stops resizing fixed width columns if the text is too wide */\n  /* stops resizing fixed width columns if the text is too wide */\n  /* border transparency tricks */\n  /* Workaround for odd bug in old versions of Opera - no other browser needs this */\n  /* if using setUseSingleCell(1) the following is a suggested set of CSS3 styles to recreate the table grid - won't work on old browsers\n.ggrouphour td,\n.gmilehour td,\n.gitemhour td\t\t\t{ background-size: 19px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 18px); width: 100%; height: 19px; }\n.ggroupday td,\n.gmileday td,\n.gitemday td\t\t\t{ background-size: 19px 1px, 133px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 18px), linear-gradient(to left, #f7f7f7 39px, transparent 1px, transparent 92px); width: 100%; height: 19px; }\n.ggroupweek td,\n.gmileweek td,\n.gitemweek td\t\t\t{ background-size: 37px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 36px); width: 100%; height: 19px; }\n.ggroupmonth td,\n.gmilemonth td,\n.gitemmonth td\t\t\t{ background-size: 37px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 36px); width: 100%; height: 19px; }\n.ggroupquarter td,\n.gmilequarter td,\n.gitemquarter td\t\t{ background-size: 19px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 18px); width: 100%; height: 19px; }\n*/\n  /* .gtasktable {\n  margin-bottom: 14px;\n} */\n  /* Printer friendly styles - we could use these all the time but they are not as pretty! */\n  /* note that \"@media print\" is not supported in IE6 or 7.  Fully patched IE8 should be OK */\n  /* Fix for OSx trackpad hiding the scroll bars*/ }\n  div.gantt {\n    font-family: tahoma, arial, verdana, Sans-serif;\n    font-size: 10px;\n    color: #656565; }\n  .gantt table {\n    border-collapse: collapse; }\n  .gantt td {\n    padding: 0px; }\n  .headweekends div {\n    font-size: 8px;\n    width: 100% !important;\n    margin: 0; }\n  .gmajorheading,\n  .gminorheading,\n  .gminorheadingwkend,\n  .gtaskcell,\n  .gtaskcellwkend {\n    height: 19px;\n    font-size: 12px;\n    border: #efefef 1px solid;\n    text-align: center;\n    cursor: default; }\n  .gtasklist {\n    height: 19px;\n    min-width: 5px;\n    max-width: 5px;\n    width: 5px;\n    border: #efefef 1px solid;\n    border-right: none; }\n  .gtaskheading,\n  .gmajorheading,\n  .gminorheading {\n    background-color: #ffffff;\n    font-weight: bold;\n    font-size: 9px;\n    white-space: nowrap; }\n  .gtaskcellwkend,\n  .gminorheadingwkend {\n    background-color: #f7f7f7;\n    font-weight: bold;\n    font-size: 9px;\n    white-space: nowrap; }\n  td.gtaskcell {\n    text-align: left; }\n  td.gspanning {\n    border-left: none;\n    border-right: none; }\n  .gtaskcelldiv {\n    position: relative; }\n  .gtaskheading,\n  .gname,\n  .gtaskname,\n  .gresource,\n  .gduration,\n  .gpccomplete,\n  .gstartdate,\n  .gplanstartdate,\n  .gplanenddate,\n  .gcost,\n  .genddate {\n    height: 18px;\n    white-space: nowrap;\n    border: #efefef 1px solid; }\n  .gtaskheading div,\n  .gname div,\n  .gtaskname div,\n  .gresource div,\n  .gduration div,\n  .gpccomplete div,\n  .gstartdate div,\n  .gplanstartdate div,\n  .gplanenddate div,\n  .gcost div,\n  .genddate div {\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n  .gtaskbarcontainer.gplan {\n    position: absolute !important;\n    top: 0px;\n    opacity: 0.3;\n    background: white;\n    z-index: 10000;\n    border: 1px solid black; }\n  .gstartdate div,\n  .gplanstartdate,\n  .gplanenddate,\n  .gstartdate,\n  .genddate {\n    text-align: center;\n    min-width: 105px;\n    width: 105px;\n    max-width: 105px;\n    font-size: 10px; }\n  .gtaskheading {\n    text-align: center; }\n  .gtaskname div,\n  .gtaskname {\n    min-width: 170px;\n    max-width: 170px;\n    width: 170px;\n    font-size: 9px;\n    border-left: none; }\n  .gtaskheading,\n  .gtaskname {\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .gtaskname.gtaskeditable div,\n  .gtaskname.gtaskeditable {\n    overflow: unset; }\n  .gselector {\n    text-align: left;\n    white-space: nowrap;\n    min-width: 170px;\n    max-width: 170px;\n    width: 170px; }\n  .gformlabel {\n    position: relative;\n    top: 0px;\n    cursor: pointer;\n    border: #ffffff 1px solid;\n    margin-left: 2px;\n    padding-left: 2px;\n    padding-right: 2px; }\n  span.gformlabel:hover,\n  span.gselected {\n    background-color: #dbecff;\n    border: #cccccc 1px solid; }\n  span.gfoldercollapse {\n    color: #000000;\n    cursor: pointer;\n    font-weight: bold;\n    font-size: 12px;\n    font-family: Courier, \"Courier New\", monospace; }\n  .gtasktableh,\n  .gtasktable {\n    border-right: #efefef 1px solid;\n    width: 100%; }\n  .gcharttableh,\n  .gtasktableh,\n  .gtasktable,\n  .gcharttable {\n    border-collapse: collapse; }\n  .gcharttable,\n  .gcharttableh {\n    table-layout: fixed; }\n  .gcharttable {\n    border: #efefef 1px solid; }\n  .ggroupitem {\n    background-color: #fbfbfb;\n    font-weight: bold; }\n  .gmileitem,\n  .glineitem {\n    background-color: #ffffff; }\n  .gitemhighlight td {\n    background-image: none;\n    background-color: #fffde5; }\n  .gmilecaption,\n  .ggroupcaption,\n  .gcaption {\n    font-weight: normal;\n    font-size: 9px;\n    text-align: left;\n    white-space: nowrap;\n    top: 1px;\n    position: absolute;\n    top: 2px; }\n  .ggroupcaption,\n  .gcaption {\n    right: -126px; }\n  .gtaskcomplete {\n    float: left;\n    overflow: hidden; }\n  .gtaskcomplete {\n    height: 5px;\n    background-color: #000000;\n    margin-top: 4px;\n    opacity: 0.4;\n    filter: alpha(opacity=40); }\n  .gmilestone {\n    font-size: 14px;\n    position: absolute;\n    top: -2px; }\n  .gmdtop {\n    top: 2px;\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-bottom: 5px solid black;\n    border-left: 5px solid transparent;\n    border-top: 5px solid transparent;\n    border-right: 5px solid transparent; }\n  .gmdbottom {\n    top: 2px;\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-top: 5px solid black;\n    border-left: 5px solid transparent;\n    border-bottom: 5px solid transparent;\n    border-right: 5px solid transparent; }\n  .ggroupblack,\n  .gtaskblue,\n  .gtaskred,\n  .gtaskgreen,\n  .gtaskyellow,\n  .gtaskpurple,\n  .gtaskpink {\n    height: 13px;\n    filter: alpha(opacity=90);\n    opacity: 0.9;\n    margin-top: 1px; }\n  .ggroupblack {\n    height: 7px;\n    background: #000000;\n    margin-top: 2px; }\n  .ggroupblackendpointleft {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    top: 2px;\n    border-top: 4px solid black;\n    border-left: 4px solid transparent;\n    border-bottom: 4px solid transparent;\n    border-right: 4px solid transparent;\n    float: left; }\n  .ggroupblackendpointright {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    top: 2px;\n    border-top: 4px solid black;\n    border-left: 4px solid transparent;\n    border-bottom: 4px solid transparent;\n    border-right: 4px solid transparent;\n    float: right; }\n  .ggroupblackcomplete {\n    float: left;\n    overflow: hidden;\n    height: 3px;\n    filter: alpha(opacity=80);\n    opacity: 0.8;\n    background-color: #777777;\n    margin-top: 2px;\n    margin-bottom: 2px; }\n  .gtaskblue {\n    background: #3a84c3;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #3a84c3 0%, #419ad6 20%, #4bb8f0 40%, #3a8bc2 70%, #26558b 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4bb8f0', endColorstr='#3a84c3', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskred {\n    background: #c43a3a;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #c43a3a 0%, #d34141 20%, #ef4c4c 40%, #c43a3a 70%, #872525 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef4c4c', endColorstr='#c43a3a', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskgreen {\n    background: #50c13a;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #50c13a 0%, #58d140 20%, #66ed4b 40%, #50c13a 70%, #358425 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66ED4B', endColorstr='#50c13a', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskyellow {\n    background: #f7e438;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #f7e438 0%, #efef37 20%, #ffff3a 40%, #f2ec37 70%, #f1da36 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff3a', endColorstr='#f7e438', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskpurple {\n    background: #c13ac1;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #c13ac1 0%, #d341d3 20%, #ef4cef 40%, #c13ac1 70%, #892689 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef4cef', endColorstr='#892689', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskpink {\n    background: #f9b1f5;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #f9b1f5 0%, #f7c0f3 20%, #f7caf4 40%, #f9c0f6 70%, #fcaef7 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7caf4', endColorstr='#fcaef7', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskbluecomplete,\n  .gtaskredcomplete,\n  .gtaskgreencomplete,\n  .gtaskyellowcomplete,\n  .gtaskpurplecomplete,\n  .gtaskpinkcomplete {\n    float: left;\n    overflow: hidden;\n    height: 5px;\n    filter: alpha(opacity=40);\n    opacity: 0.4;\n    background-color: #000000;\n    margin-top: 4px; }\n  .glinev {\n    border-left: 1px solid;\n    width: 0px; }\n  .glineh {\n    border-top: 1px solid;\n    height: 0px; }\n  .gDepFS,\n  .gDepSS,\n  .gDepSF,\n  .gDepFF {\n    border-color: #ff0000; }\n  .gDepFSArw,\n  .gDepSSArw {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-bottom: 4px solid transparent;\n    border-left: 4px solid #ff0000;\n    border-top: 4px solid transparent;\n    border-right: 4px solid transparent; }\n  .gDepFFArw,\n  .gDepSFArw {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-bottom: 4px solid transparent;\n    border-left: 4px solid transparent;\n    border-top: 4px solid transparent;\n    border-right: 4px solid #ff0000; }\n  .gCurDate {\n    border-color: #0000ff; }\n  div.gtaskbarcontainer {\n    z-index: 1;\n    position: absolute;\n    top: 0px; }\n  .textbar {\n    word-break: break-all;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    width: 40%;\n    display: inline-block; }\n  .JSGanttToolTip {\n    position: absolute;\n    display: block;\n    z-index: 10000; }\n  .JSGanttToolTipcont {\n    font-family: tahoma, arial, verdana;\n    font-size: 10px;\n    display: block;\n    background: #ffffff;\n    color: #656565; }\n  .gTaskInfo {\n    background: #dbecff;\n    width: 400px;\n    border: #656565 1px solid;\n    border-radius: 10px;\n    padding: 4px 6px 4px 6px;\n    float: left; }\n  .gTtTitle {\n    display: block;\n    font-size: 12px;\n    font-weight: bold;\n    color: #404040;\n    margin-left: 4px;\n    margin-bottom: 1em; }\n  .gTaskLabel {\n    font-size: 11px;\n    font-weight: bold;\n    color: #656565;\n    margin-left: 4px; }\n  .gTaskText {\n    position: absolute;\n    left: 90px;\n    padding-top: 1px;\n    font-size: 10px;\n    font-weight: normal;\n    color: #656565; }\n  .gTaskNotes {\n    font-size: 11px;\n    font-weight: normal;\n    color: #323232;\n    padding: 0 15px;\n    display: block; }\n  .gTIn {\n    padding-top: 10px; }\n  .gantt {\n    min-width: 632px;\n    /* 2x LC width */ }\n  .gchartcontainer {\n    /* padding-left: 532px; LC width */\n    line-height: 1;\n    /* Overrides inherited CSS (e.g. from Bootstrap) */\n    display: flex; }\n  .gcontainercol {\n    position: relative; }\n  .glistgrid {\n    min-width: 132px;\n    /* LC width */\n    float: left;\n    /* LC width */\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    overflow: hidden; }\n  .glistlbl {\n    min-width: 132px;\n    /* LC width */\n    float: left;\n    /* LC width */\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    overflow: hidden;\n    flex: none; }\n  .glistlbl,\n  .gchartgrid {\n    display: flex;\n    flex-direction: column; }\n  .glabelfooter {\n    clear: both; }\n  .ggridfooter {\n    clear: both; }\n  .rhscrpad {\n    width: 150px;\n    position: absolute;\n    top: 0px;\n    height: 1px; }\n  .gchartgrid {\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    position: relative;\n    /* overflow: auto; */\n    overflow: unset;\n    overflow-y: auto;\n    min-height: 0%; }\n  .gchartlbl {\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    position: relative;\n    overflow: hidden;\n    flex: none; }\n  .gantt {\n    _height: 100%; }\n  div .gantt {\n    /* _width: 1064px; ie6 fixed width */ }\n  div.gchartlbl,\n  div.gchartgrid {\n    /* _width: 532px; */ }\n  div.glistlbl,\n  div.glistgrid {\n    *right: 0px;\n    /* ie7 pulls the content too far left with the negative margin */\n    _right: 532px;\n    /* but ie6 fixed width needs this */\n    _margin-left: -532px;\n    /* ie6 fixed width */\n    float: left; }\n  div.gchartgrid {\n    *padding-bottom: 20px;\n    *overflow-y: hidden; }\n  td.gmajorheading div {\n    *overflow: hidden; }\n  td.gspanning div {\n    *overflow: hidden; }\n  .ggroupblackendpointleft {\n    _border-top: 4px solid black;\n    _border-left: 4px solid pink;\n    _border-bottom: 4px solid pink;\n    _border-right: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .ggroupblackendpointright {\n    _border-top: 4px solid black;\n    _border-left: 4px solid pink;\n    _border-bottom: 4px solid pink;\n    _border-right: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .gmdtop {\n    _border-left: 5px solid pink;\n    _border-top: 5px solid pink;\n    _border-right: 5px solid pink;\n    _filter: chroma(color=pink); }\n  .gmdbottom {\n    _border-left: 5px solid pink;\n    _border-bottom: 5px solid pink;\n    _border-right: 5px solid pink;\n    _filter: chroma(color=pink); }\n  .gDepFSArw,\n  .gDepSSArw {\n    _border-bottom: 4px solid pink;\n    _border-top: 4px solid pink;\n    _border-right: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .gDepFFArw,\n  .gDepSFArw {\n    _border-bottom: 4px solid pink;\n    _border-left: 4px solid pink;\n    _border-top: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .glinediv {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    z-index: 1px; }\n  .gantt-inputtable {\n    max-width: 100%;\n    max-height: 16px; }\n  .gadditional {\n    border: #efefef 1px solid; }\n  .gadditional,\n  .gresource,\n  .gduration,\n  .gpccomplete,\n  .gcost {\n    text-align: center;\n    width: 70px;\n    max-width: 70px;\n    min-width: 70px;\n    font-size: 10px; }\n  @media print {\n     {\n      /* All your print styles go here */ }\n      html,\n      .gchartgrid {\n        overflow: unset !important; }\n      .glistgrid {\n        float: none !important; } }\n  .gmain {\n    height: 100%;\n    display: flex;\n    flex-direction: column; }\n  .gmainright {\n    overflow: hidden;\n    flex: auto; }\n  .gmainleft {\n    overflow: hidden;\n    flex: 0 0 50%; }\n  .gtasktableh tr,\n  .gcharttable tr,\n  .gcharttableh tr,\n  .gtasktable tr {\n    height: 22px !important; }\n  .gtasktableouterwrapper {\n    overflow: hidden; }\n  .gtasktablewrapper {\n    overflow-y: scroll;\n    flex: auto;\n    height: 100%; }\n  .chartgrid {\n    overflow: auto;\n    flex: auto; }\n  @media print {\n    .ggroupblack {\n      height: 0px;\n      border-top: 7px solid;\n      border-color: #000000; }\n    .gtaskblue {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #3a84c3; }\n    .gtaskred {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #c43a3a; }\n    .gtaskgreen {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #50c13a; }\n    .gtaskyellow {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #f7e438; }\n    .gtaskpurple {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #c13ac1; }\n    .gtaskpink {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #f9b1f5; }\n    .gtaskbluecomplete,\n    .gtaskredcomplete,\n    .gtaskgreencomplete,\n    .gtaskyellowcomplete,\n    .gtaskpurplecomplete,\n    .gtaskpinkcomplete {\n      height: 0px;\n      filter: alpha(opacity=40);\n      opacity: 0.4;\n      margin-top: -9px;\n      border-top: 5px solid;\n      border-color: #000000; }\n    .ggroupblackcomplete {\n      height: 0px;\n      filter: alpha(opacity=80);\n      opacity: 0.8;\n      margin-top: -5px;\n      border-top: 3px solid;\n      border-color: #777777; }\n    .gmainright,\n    .gmainleft {\n      overflow: hidden;\n      width: auto; }\n    table {\n      page-break-after: auto; }\n    tr {\n      page-break-inside: avoid;\n      page-break-after: auto; }\n    td {\n      page-break-inside: avoid;\n      page-break-after: auto; }\n    thead {\n      display: table-header-group; }\n    tfoot {\n      display: table-footer-group; } }\n  .frame::-webkit-scrollbar {\n    -webkit-appearance: none; }\n  .frame::-webkit-scrollbar:vertical {\n    width: 11px; }\n  .frame::-webkit-scrollbar:horizontal {\n    height: 11px; }\n  .frame::-webkit-scrollbar-thumb {\n    border-radius: 8px;\n    border: 2px solid white;\n    /* should match background, can't be transparent */\n    background-color: rgba(0, 0, 0, 0.5); }\n  .frame::-webkit-scrollbar-track {\n    background-color: #fff;\n    border-radius: 8px; }\n  .gscrollbar-calculation-container {\n    visibility: hidden;\n    overflow: scroll;\n    -ms-overflow-style: scrollbar;\n    display: block; }\n\n.styles_test__3MEaA {\n  display: inline-block;\n  margin: 2em auto;\n  border: 2px solid #000;\n  font-size: 2em; }\n";
+var css = "/* add css styles here (optional) */\n {\n  /* Sample CSS for jsGanttImproved v1.8.0 */\n  /* cell defaults */\n  /* all three width values set just to make sure - helps resizing code */\n  /* Additional values for some cell elements */\n  /* Task list defaults */\n  /* Additional values for some task list elements */\n  /* needed for IE8 */\n  /* for some reason firefox needs this */\n  /* Differentiate Group, Milestone and Ordinary task items (applied to row) */\n  /* highlight row (applied to row) */\n  /* task bar caption text styles */\n  /* Task complete %age bar shared attributes */\n  /* Task complete %age bar */\n  /* Milestones */\n  /* Task bar shared attributes */\n  /* Task bars - ggroupblack is set as the default class on the task if it is undefined */\n  /*  END Task bar styles */\n  /* Add a max-height value here if wanted */\n  /* Old Internet Explorer version hacks */\n  /* otherwise the chart disappears! */\n  /* ie6 fixed width */\n  /* variable height design, no need for vertical scroll */\n  /* stops resizing fixed width columns if the text is too wide */\n  /* stops resizing fixed width columns if the text is too wide */\n  /* border transparency tricks */\n  /* Workaround for odd bug in old versions of Opera - no other browser needs this */\n  /* if using setUseSingleCell(1) the following is a suggested set of CSS3 styles to recreate the table grid - won't work on old browsers\r\n.ggrouphour td,\r\n.gmilehour td,\r\n.gitemhour td\t\t\t{ background-size: 19px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 18px); width: 100%; height: 19px; }\r\n.ggroupday td,\r\n.gmileday td,\r\n.gitemday td\t\t\t{ background-size: 19px 1px, 133px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 18px), linear-gradient(to left, #f7f7f7 39px, transparent 1px, transparent 92px); width: 100%; height: 19px; }\r\n.ggroupweek td,\r\n.gmileweek td,\r\n.gitemweek td\t\t\t{ background-size: 37px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 36px); width: 100%; height: 19px; }\r\n.ggroupmonth td,\r\n.gmilemonth td,\r\n.gitemmonth td\t\t\t{ background-size: 37px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 36px); width: 100%; height: 19px; }\r\n.ggroupquarter td,\r\n.gmilequarter td,\r\n.gitemquarter td\t\t{ background-size: 19px 1px; background-image: linear-gradient(to left, #efefef, transparent 1px, transparent 18px); width: 100%; height: 19px; }\r\n*/\n  /* .gtasktable {\r\n  margin-bottom: 14px;\r\n} */\n  /* Printer friendly styles - we could use these all the time but they are not as pretty! */\n  /* note that \"@media print\" is not supported in IE6 or 7.  Fully patched IE8 should be OK */\n  /* Fix for OSx trackpad hiding the scroll bars*/ }\n  div.gantt {\n    font-family: tahoma, arial, verdana, Sans-serif;\n    font-size: 10px;\n    color: #656565; }\n  .gantt table {\n    border-collapse: collapse; }\n  .gantt td {\n    padding: 0px; }\n  .headweekends div {\n    font-size: 8px;\n    width: 100% !important;\n    margin: 0; }\n  .gmajorheading,\n  .gminorheading,\n  .gminorheadingwkend,\n  .gtaskcell,\n  .gtaskcellwkend {\n    height: 19px;\n    font-size: 12px;\n    border: #efefef 1px solid;\n    text-align: center;\n    cursor: default; }\n  .gtasklist {\n    height: 19px;\n    min-width: 5px;\n    max-width: 5px;\n    width: 5px;\n    border: #efefef 1px solid;\n    border-right: none; }\n  .gtaskheading,\n  .gmajorheading,\n  .gminorheading {\n    background-color: #ffffff;\n    font-weight: bold;\n    font-size: 9px;\n    white-space: nowrap; }\n  .gtaskcellwkend,\n  .gminorheadingwkend {\n    background-color: #f7f7f7;\n    font-weight: bold;\n    font-size: 9px;\n    white-space: nowrap; }\n  td.gtaskcell {\n    text-align: left; }\n  td.gspanning {\n    border-left: none;\n    border-right: none; }\n  .gtaskcelldiv {\n    position: relative; }\n  .gtaskheading,\n  .gname,\n  .gtaskname,\n  .gresource,\n  .gduration,\n  .gpccomplete,\n  .gstartdate,\n  .gplanstartdate,\n  .gplanenddate,\n  .gcost,\n  .genddate {\n    height: 18px;\n    white-space: nowrap;\n    border: #efefef 1px solid; }\n  .gtaskheading div,\n  .gname div,\n  .gtaskname div,\n  .gresource div,\n  .gduration div,\n  .gpccomplete div,\n  .gstartdate div,\n  .gplanstartdate div,\n  .gplanenddate div,\n  .gcost div,\n  .genddate div {\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n  .gtaskbarcontainer.gplan {\n    position: absolute !important;\n    top: 0px;\n    opacity: 0.3;\n    background: white;\n    z-index: 10000;\n    border: 1px solid black; }\n  .gstartdate div,\n  .gplanstartdate,\n  .gplanenddate,\n  .gstartdate,\n  .genddate {\n    text-align: center;\n    min-width: 105px;\n    width: 105px;\n    max-width: 105px;\n    font-size: 10px; }\n  .gtaskheading {\n    text-align: center; }\n  .gtaskname div,\n  .gtaskname {\n    min-width: 170px;\n    max-width: 170px;\n    width: 170px;\n    font-size: 9px;\n    border-left: none; }\n  .gtaskheading,\n  .gtaskname {\n    text-overflow: ellipsis;\n    overflow: hidden; }\n  .gtaskname.gtaskeditable div,\n  .gtaskname.gtaskeditable {\n    overflow: unset; }\n  .gselector {\n    text-align: left;\n    white-space: nowrap;\n    min-width: 170px;\n    max-width: 170px;\n    width: 170px; }\n  .gformlabel {\n    position: relative;\n    top: 0px;\n    cursor: pointer;\n    border: #ffffff 1px solid;\n    margin-left: 2px;\n    padding-left: 2px;\n    padding-right: 2px; }\n  span.gformlabel:hover,\n  span.gselected {\n    background-color: #dbecff;\n    border: #cccccc 1px solid; }\n  span.gfoldercollapse {\n    color: #000000;\n    cursor: pointer;\n    font-weight: bold;\n    font-size: 12px;\n    font-family: Courier, \"Courier New\", monospace; }\n  .gtasktableh,\n  .gtasktable {\n    border-right: #efefef 1px solid;\n    width: 100%; }\n  .gcharttableh,\n  .gtasktableh,\n  .gtasktable,\n  .gcharttable {\n    border-collapse: collapse; }\n  .gcharttable,\n  .gcharttableh {\n    table-layout: fixed; }\n  .gcharttable {\n    border: #efefef 1px solid; }\n  .ggroupitem {\n    background-color: #fbfbfb;\n    font-weight: bold; }\n  .gmileitem,\n  .glineitem {\n    background-color: #ffffff; }\n  .gitemhighlight td {\n    background-image: none;\n    background-color: #fffde5; }\n  .gmilecaption,\n  .ggroupcaption,\n  .gcaption {\n    font-weight: normal;\n    font-size: 9px;\n    text-align: left;\n    white-space: nowrap;\n    top: 1px;\n    position: absolute;\n    top: 2px; }\n  .ggroupcaption,\n  .gcaption {\n    right: -126px; }\n  .gtaskcomplete {\n    float: left;\n    overflow: hidden; }\n  .gtaskcomplete {\n    height: 5px;\n    background-color: #000000;\n    margin-top: 4px;\n    opacity: 0.4;\n    filter: alpha(opacity=40); }\n  .gmilestone {\n    font-size: 14px;\n    position: absolute;\n    top: -2px; }\n  .gmdtop {\n    top: 2px;\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-bottom: 5px solid black;\n    border-left: 5px solid transparent;\n    border-top: 5px solid transparent;\n    border-right: 5px solid transparent; }\n  .gmdbottom {\n    top: 2px;\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-top: 5px solid black;\n    border-left: 5px solid transparent;\n    border-bottom: 5px solid transparent;\n    border-right: 5px solid transparent; }\n  .ggroupblack,\n  .gtaskblue,\n  .gtaskred,\n  .gtaskgreen,\n  .gtaskyellow,\n  .gtaskpurple,\n  .gtaskpink {\n    height: 13px;\n    filter: alpha(opacity=90);\n    opacity: 0.9;\n    margin-top: 1px; }\n  .ggroupblack {\n    height: 7px;\n    background: #000000;\n    margin-top: 2px; }\n  .ggroupblackendpointleft {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    top: 2px;\n    border-top: 4px solid black;\n    border-left: 4px solid transparent;\n    border-bottom: 4px solid transparent;\n    border-right: 4px solid transparent;\n    float: left; }\n  .ggroupblackendpointright {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    top: 2px;\n    border-top: 4px solid black;\n    border-left: 4px solid transparent;\n    border-bottom: 4px solid transparent;\n    border-right: 4px solid transparent;\n    float: right; }\n  .ggroupblackcomplete {\n    float: left;\n    overflow: hidden;\n    height: 3px;\n    filter: alpha(opacity=80);\n    opacity: 0.8;\n    background-color: #777777;\n    margin-top: 2px;\n    margin-bottom: 2px; }\n  .gtaskblue {\n    background: #3a84c3;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #3a84c3 0%, #419ad6 20%, #4bb8f0 40%, #3a8bc2 70%, #26558b 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4bb8f0', endColorstr='#3a84c3', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskred {\n    background: #c43a3a;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #c43a3a 0%, #d34141 20%, #ef4c4c 40%, #c43a3a 70%, #872525 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef4c4c', endColorstr='#c43a3a', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskgreen {\n    background: #50c13a;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #50c13a 0%, #58d140 20%, #66ed4b 40%, #50c13a 70%, #358425 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66ED4B', endColorstr='#50c13a', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskyellow {\n    background: #f7e438;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #f7e438 0%, #efef37 20%, #ffff3a 40%, #f2ec37 70%, #f1da36 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff3a', endColorstr='#f7e438', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskpurple {\n    background: #c13ac1;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #c13ac1 0%, #d341d3 20%, #ef4cef 40%, #c13ac1 70%, #892689 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef4cef', endColorstr='#892689', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskpink {\n    background: #f9b1f5;\n    /* Old browsers */\n    background: linear-gradient(to bottom, #f9b1f5 0%, #f7c0f3 20%, #f7caf4 40%, #f9c0f6 70%, #fcaef7 100%);\n    /* W3C */\n    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7caf4', endColorstr='#fcaef7', GradientType=0);\n    /* IE6-9 */ }\n  .gtaskbluecomplete,\n  .gtaskredcomplete,\n  .gtaskgreencomplete,\n  .gtaskyellowcomplete,\n  .gtaskpurplecomplete,\n  .gtaskpinkcomplete {\n    float: left;\n    overflow: hidden;\n    height: 5px;\n    filter: alpha(opacity=40);\n    opacity: 0.4;\n    background-color: #000000;\n    margin-top: 4px; }\n  .glinev {\n    border-left: 1px solid;\n    width: 0px; }\n  .glineh {\n    border-top: 1px solid;\n    height: 0px; }\n  .gDepFS,\n  .gDepSS,\n  .gDepSF,\n  .gDepFF {\n    border-color: #ff0000; }\n  .gDepFSArw,\n  .gDepSSArw {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-bottom: 4px solid transparent;\n    border-left: 4px solid #ff0000;\n    border-top: 4px solid transparent;\n    border-right: 4px solid transparent; }\n  .gDepFFArw,\n  .gDepSFArw {\n    overflow: hidden;\n    width: 0px;\n    height: 0px;\n    border-bottom: 4px solid transparent;\n    border-left: 4px solid transparent;\n    border-top: 4px solid transparent;\n    border-right: 4px solid #ff0000; }\n  .gCurDate {\n    border-color: #0000ff; }\n  div.gtaskbarcontainer {\n    z-index: 1;\n    position: absolute;\n    top: 0px; }\n  .textbar {\n    word-break: break-all;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    width: 40%;\n    display: inline-block; }\n  .JSGanttToolTip {\n    position: absolute;\n    display: block;\n    z-index: 10000; }\n  .JSGanttToolTipcont {\n    font-family: tahoma, arial, verdana;\n    font-size: 10px;\n    display: block;\n    background: #ffffff;\n    color: #656565; }\n  .gTaskInfo {\n    background: #dbecff;\n    width: 400px;\n    border: #656565 1px solid;\n    border-radius: 10px;\n    padding: 4px 6px 4px 6px;\n    float: left; }\n  .gTtTitle {\n    display: block;\n    font-size: 12px;\n    font-weight: bold;\n    color: #404040;\n    margin-left: 4px;\n    margin-bottom: 1em; }\n  .gTaskLabel {\n    font-size: 11px;\n    font-weight: bold;\n    color: #656565;\n    margin-left: 4px; }\n  .gTaskText {\n    position: absolute;\n    left: 90px;\n    padding-top: 1px;\n    font-size: 10px;\n    font-weight: normal;\n    color: #656565; }\n  .gTaskNotes {\n    font-size: 11px;\n    font-weight: normal;\n    color: #323232;\n    padding: 0 15px;\n    display: block; }\n  .gTIn {\n    padding-top: 10px; }\n  .gantt {\n    min-width: 632px;\n    /* 2x LC width */ }\n  .gchartcontainer {\n    /* padding-left: 532px; LC width */\n    line-height: 1;\n    /* Overrides inherited CSS (e.g. from Bootstrap) */\n    display: flex; }\n  .gcontainercol {\n    position: relative; }\n  .glistgrid {\n    min-width: 132px;\n    /* LC width */\n    float: left;\n    /* LC width */\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    overflow: hidden; }\n  .glistlbl {\n    min-width: 132px;\n    /* LC width */\n    float: left;\n    /* LC width */\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    overflow: hidden;\n    flex: none; }\n  .glistlbl,\n  .gchartgrid {\n    display: flex;\n    flex-direction: column; }\n  .glabelfooter {\n    clear: both; }\n  .ggridfooter {\n    clear: both; }\n  .rhscrpad {\n    width: 150px;\n    position: absolute;\n    top: 0px;\n    height: 1px; }\n  .gchartgrid {\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    position: relative;\n    /* overflow: auto; */\n    overflow: unset;\n    overflow-y: auto;\n    min-height: 0%; }\n  .gchartlbl {\n    padding-right: 0px;\n    padding-left: 0px;\n    padding-bottom: 0px;\n    padding-top: 0px;\n    background-color: #ffffff;\n    position: relative;\n    overflow: hidden;\n    flex: none; }\n  .gantt {\n    _height: 100%; }\n  div .gantt {\n    /* _width: 1064px; ie6 fixed width */ }\n  div.gchartlbl,\n  div.gchartgrid {\n    /* _width: 532px; */ }\n  div.glistlbl,\n  div.glistgrid {\n    *right: 0px;\n    /* ie7 pulls the content too far left with the negative margin */\n    _right: 532px;\n    /* but ie6 fixed width needs this */\n    _margin-left: -532px;\n    /* ie6 fixed width */\n    float: left; }\n  div.gchartgrid {\n    *padding-bottom: 20px;\n    *overflow-y: hidden; }\n  td.gmajorheading div {\n    *overflow: hidden; }\n  td.gspanning div {\n    *overflow: hidden; }\n  .ggroupblackendpointleft {\n    _border-top: 4px solid black;\n    _border-left: 4px solid pink;\n    _border-bottom: 4px solid pink;\n    _border-right: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .ggroupblackendpointright {\n    _border-top: 4px solid black;\n    _border-left: 4px solid pink;\n    _border-bottom: 4px solid pink;\n    _border-right: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .gmdtop {\n    _border-left: 5px solid pink;\n    _border-top: 5px solid pink;\n    _border-right: 5px solid pink;\n    _filter: chroma(color=pink); }\n  .gmdbottom {\n    _border-left: 5px solid pink;\n    _border-bottom: 5px solid pink;\n    _border-right: 5px solid pink;\n    _filter: chroma(color=pink); }\n  .gDepFSArw,\n  .gDepSSArw {\n    _border-bottom: 4px solid pink;\n    _border-top: 4px solid pink;\n    _border-right: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .gDepFFArw,\n  .gDepSFArw {\n    _border-bottom: 4px solid pink;\n    _border-left: 4px solid pink;\n    _border-top: 4px solid pink;\n    _filter: chroma(color=pink); }\n  .glinediv {\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    z-index: 1px; }\n  .gantt-inputtable {\n    max-width: 100%;\n    max-height: 16px; }\n  .gadditional {\n    border: #efefef 1px solid; }\n  .gadditional,\n  .gresource,\n  .gduration,\n  .gpccomplete,\n  .gcost {\n    text-align: center;\n    width: 70px;\n    max-width: 70px;\n    min-width: 70px;\n    font-size: 10px; }\n  @media print {\n     {\n      /* All your print styles go here */ }\n      html,\n      .gchartgrid {\n        overflow: unset !important; }\n      .glistgrid {\n        float: none !important; } }\n  .gmain {\n    height: 100%;\n    display: flex;\n    flex-direction: column; }\n  .gmainright {\n    overflow: hidden;\n    flex: auto; }\n  .gmainleft {\n    overflow: hidden;\n    flex: 0 0 50%; }\n  .gtasktableh tr,\n  .gcharttable tr,\n  .gcharttableh tr,\n  .gtasktable tr {\n    height: 22px !important; }\n  .gtasktableouterwrapper {\n    overflow: hidden; }\n  .gtasktablewrapper {\n    overflow-y: scroll;\n    flex: auto;\n    height: 100%; }\n  .chartgrid {\n    overflow: auto;\n    flex: auto; }\n  @media print {\n    .ggroupblack {\n      height: 0px;\n      border-top: 7px solid;\n      border-color: #000000; }\n    .gtaskblue {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #3a84c3; }\n    .gtaskred {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #c43a3a; }\n    .gtaskgreen {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #50c13a; }\n    .gtaskyellow {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #f7e438; }\n    .gtaskpurple {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #c13ac1; }\n    .gtaskpink {\n      height: 0px;\n      border-top: 13px solid;\n      border-color: #f9b1f5; }\n    .gtaskbluecomplete,\n    .gtaskredcomplete,\n    .gtaskgreencomplete,\n    .gtaskyellowcomplete,\n    .gtaskpurplecomplete,\n    .gtaskpinkcomplete {\n      height: 0px;\n      filter: alpha(opacity=40);\n      opacity: 0.4;\n      margin-top: -9px;\n      border-top: 5px solid;\n      border-color: #000000; }\n    .ggroupblackcomplete {\n      height: 0px;\n      filter: alpha(opacity=80);\n      opacity: 0.8;\n      margin-top: -5px;\n      border-top: 3px solid;\n      border-color: #777777; }\n    .gmainright,\n    .gmainleft {\n      overflow: hidden;\n      width: auto; }\n    table {\n      page-break-after: auto; }\n    tr {\n      page-break-inside: avoid;\n      page-break-after: auto; }\n    td {\n      page-break-inside: avoid;\n      page-break-after: auto; }\n    thead {\n      display: table-header-group; }\n    tfoot {\n      display: table-footer-group; } }\n  .frame::-webkit-scrollbar {\n    -webkit-appearance: none; }\n  .frame::-webkit-scrollbar:vertical {\n    width: 11px; }\n  .frame::-webkit-scrollbar:horizontal {\n    height: 11px; }\n  .frame::-webkit-scrollbar-thumb {\n    border-radius: 8px;\n    border: 2px solid white;\n    /* should match background, can't be transparent */\n    background-color: rgba(0, 0, 0, 0.5); }\n  .frame::-webkit-scrollbar-track {\n    background-color: #fff;\n    border-radius: 8px; }\n  .gscrollbar-calculation-container {\n    visibility: hidden;\n    overflow: scroll;\n    -ms-overflow-style: scrollbar;\n    display: block; }\n\n.styles_test__3MEaA {\n  display: inline-block;\n  margin: 2em auto;\n  border: 2px solid #000;\n  font-size: 2em; }\n";
 styleInject(css);
 
 var JSGanttComponent = /** @class */ (function (_super) {

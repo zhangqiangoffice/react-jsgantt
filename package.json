@@ -18,13 +18,12 @@
     "demo": "cd example && npm run start ",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build",
     "publish-npm": "npm run build && npm publish"
   },
   "dependencies": {
-    "jsgantt-improved": "^2.6.3",
+    "jsgantt-improved": "git+ssh://git@github.com:zhangqiangoffice/jsgantt-improved.git",
     "node-sass": "^4.11.0"
   },
   "peerDependencies": {
