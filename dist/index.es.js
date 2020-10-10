@@ -1615,6 +1615,30 @@ exports.TaskItem = function (pID, pName, pStart, pEnd, pClass, pLink, pMile, pRe
     };
     this.getPlanStart = function () { return vPlanStart ? vPlanStart : vStart; };
     this.getPlanEnd = function () { return vPlanEnd ? vPlanEnd : vEnd; };
+    this.getDelayStart = function () {
+        if (vStart && vPlanEnd && vStart.getTime() > vPlanEnd.getTime()) {
+            return vStart;
+        }
+        if (vEnd && vPlanEnd && vEnd.getTime() > vPlanEnd.getTime()) {
+            return vPlanEnd;
+        }
+        if (!vEnd && vStart && vPlanEnd && vStart.getTime() < vPlanEnd.getTime() && vPlanEnd.getTime() < new Date().getTime()) {
+            return vPlanEnd;
+        }
+        return null;
+    };
+    this.getDelayEnd = function () {
+        if ((vStart && vPlanEnd && vStart.getTime() > vPlanEnd.getTime())) {
+            return vEnd || new Date();
+        }
+        if (vEnd && vPlanEnd && vEnd.getTime() > vPlanEnd.getTime()) {
+            return vEnd;
+        }
+        if (!vEnd && vStart && vPlanEnd && vStart.getTime() < vPlanEnd.getTime() && vPlanEnd.getTime() < new Date().getTime()) {
+            return new Date();
+        }
+        return null;
+    };
     this.getCost = function () { return vCost; };
     this.getGroupMinStart = function () { return vGroupMinStart; };
     this.getGroupMinEnd = function () { return vGroupMinEnd; };
@@ -4576,7 +4600,7 @@ exports.GanttChart = function (pDiv, pFormat) {
         }
         for (i = 0; i < this.vTaskList.length; i++) {
             var curTaskStart = this.vTaskList[i].getStart() ? this.vTaskList[i].getStart() : this.vTaskList[i].getPlanStart();
-            var curTaskEnd = this.vTaskList[i].getEnd() ? this.vTaskList[i].getEnd() : this.vTaskList[i].getPlanEnd();
+            var curTaskEnd = this.vTaskList[i].getDelayEnd() ? this.vTaskList[i].getDelayEnd() : this.vTaskList[i].getPlanEnd();
             var vTaskLeftPx_1 = general_utils.getOffset(vMinDate, curTaskStart, vColWidth, this.vFormat, this.vShowWeekends);
             var vTaskRightPx = general_utils.getOffset(curTaskStart, curTaskEnd, vColWidth, this.vFormat, this.vShowWeekends);
             var curTaskPlanStart = void 0, curTaskPlanEnd = void 0;
@@ -4667,12 +4691,21 @@ exports.GanttChart = function (pDiv, pFormat) {
                     this.vTaskList[i].setBarDiv(vTmpDiv_1);
                     var vTmpDiv2 = void 0;
                     if (this.vTaskList[i].getStartVar()) {
-                        // textbar
-                        vTmpDiv2 = draw_utils.newNode(vTmpDiv_1, 'div', this.vDivId + 'taskbar_' + vID, this.vTaskList[i].getClass(), null, vTaskWidth);
-                        if (this.vTaskList[i].getBarText()) {
-                            draw_utils.newNode(vTmpDiv2, 'span', this.vDivId + 'tasktextbar_' + vID, 'textbar', this.vTaskList[i].getBarText(), this.vTaskList[i].getCompRestStr());
+                        if (this.vTaskList[i].getStartVar().getTime() < this.vTaskList[i].getPlanEnd().getTime()) {
+                            var vTaskCompleteLeftPx = general_utils.getOffset(curTaskStart, this.vTaskList[i].getStartVar(), vColWidth, this.vFormat, this.vShowWeekends);
+                            var taskCompleteOnTimeDate = this.vTaskList[i].getEnd().getTime() < this.vTaskList[i].getPlanEnd().getTime() ? this.vTaskList[i].getEnd() : this.vTaskList[i].getPlanEnd();
+                            var vTaskCompleteRightPx = general_utils.getOffset(this.vTaskList[i].getStartVar(), taskCompleteOnTimeDate, vColWidth, this.vFormat, this.vShowWeekends);
+                            // textbar
+                            vTmpDiv2 = draw_utils.newNode(vTmpDiv_1, 'div', this.vDivId + 'taskbar_' + vID, this.vTaskList[i].getClass(), null, vTaskCompleteRightPx, vTaskCompleteLeftPx);
+                            if (this.vTaskList[i].getBarText()) {
+                                draw_utils.newNode(vTmpDiv2, 'span', this.vDivId + 'tasktextbar_' + vID, 'textbar', this.vTaskList[i].getBarText(), this.vTaskList[i].getCompRestStr());
+                            }
+                            this.vTaskList[i].setTaskDiv(vTmpDiv2);
                         }
-                        this.vTaskList[i].setTaskDiv(vTmpDiv2);
+                        if (this.vTaskList[i].getDelayStart()) {
+                            var delayWidth = general_utils.getOffset(this.vTaskList[i].getDelayStart(), this.vTaskList[i].getDelayEnd(), vColWidth, this.vFormat, this.vShowWeekends);
+                            draw_utils.newNode(vTmpDiv_1, 'div', this.vDivId + 'delaybar_' + vID, 'delaybar', null, delayWidth);
+                        }
                     }
                     // PLANNED
                     // If exist and one of them are different, show plan bar... show if there is no real vStart as well (just plan dates)
@@ -4685,8 +4718,6 @@ exports.GanttChart = function (pDiv, pFormat) {
                     if (vTmpDiv2) {
                         draw_utils.newNode(vTmpDiv2, 'div', this.vDivId + 'complete_' + vID, this.vTaskList[i].getClass() + 'complete', null, this.vTaskList[i].getCompStr());
                     }
-                    //Delays
-                    draw_utils.newNode(vTmpDiv_1, 'div', this.vDivId + 'delaydiv_' + vID, 'gtaskred', null, 100);
                     // caption
                     if (vComb)
                         vTmpItem = this.vTaskList[i].getParItem();
